@@ -53,7 +53,8 @@ class WebContentAggregator:
         summarizer = pipeline("summarization")
         for info in info_list:
             content = info["summary"]
-            summary = summarizer(content, max_length=100, min_length=20)[0]["summary_text"]
+            summary = summarizer(content, max_length=100, min_length=20)[
+                0]["summary_text"]
             info["summary"] = summary
 
         return info_list
